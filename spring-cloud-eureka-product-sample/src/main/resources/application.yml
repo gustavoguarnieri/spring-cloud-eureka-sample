@@ -1,0 +1,21 @@
+server:
+  port: 9081
+  servlet:
+    context-path: /product-service
+
+spring:
+  application:
+    name: product-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    metadata-map:
+      configPath: ${server.servlet.context-path}
+    preferIpAddress: true
+
+springdoc:
+  packagesToScan: br.com.example.spring.cloud.eureka.product.sample.controller
+  pathsToMatch: /**
