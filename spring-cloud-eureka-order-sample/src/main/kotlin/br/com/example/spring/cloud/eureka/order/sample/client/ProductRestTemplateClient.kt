@@ -19,12 +19,11 @@ class ProductRestTemplateClient(private val eurekaClient: EurekaClient) {
     private fun buildURLClientService(path: String): URI {
         val service = eurekaClient.getApplication(PRODUCT_SERVICE_NAME).instances.first()
         return URI.create(
-            "http://${service.hostName}:${service.port}${service.metadata[EUREKA_META_DATA_CONFIG_PATH]}$path"
+            "http://${service.hostName}:${service.port}$path"
         )
     }
 
     companion object {
         const val BASE_PRODUCT_PATH = "/api/v1/products"
-        const val EUREKA_META_DATA_CONFIG_PATH = "configPath"
     }
 }

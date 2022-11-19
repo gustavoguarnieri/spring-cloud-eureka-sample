@@ -13,6 +13,6 @@ interface ProductFeignClient {
     fun getProductById(@PathVariable productId: Long): ProductResponseDTO?
 
     companion object {
-        const val BASE_PRODUCT_PATH = "/product-service/api/v1/products"
+        const val BASE_PRODUCT_PATH = "/api/v1/products"
     }
 }
