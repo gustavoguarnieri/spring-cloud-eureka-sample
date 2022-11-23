@@ -1,7 +1,7 @@
 domain: http://localhost
 
 server:
-  port: 8761
+  port: 8762
 
 spring:
   application:
@@ -9,11 +9,13 @@ spring:
 
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: ${domain}:8762/eureka
+      defaultZone: ${domain}:8761/eureka
     instance:
+      preferIpAddress: true
+      instanceId: ${spring.application.name}:${random.value}
       hostname: ${domain}
 
 logging:
