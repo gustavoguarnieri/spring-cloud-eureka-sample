@@ -17,9 +17,9 @@ class OrderController(private val orderService: OrderService) {
 
     @GetMapping
     fun getOrders(@RequestParam(required = false) httpRestClientType: HttpRestClientType?): OrderResponseDTO {
-        log.info { "getOrders: starting getting products, httpRestClientType=$httpRestClientType" }
+        log.info { "getOrders: starting getting orders, httpRestClientType=$httpRestClientType" }
         return orderService.getOrders(httpRestClientType).also {
-            log.info { "getOrders: got products, httpRestClientType=$httpRestClientType" }
+            log.info { "getOrders: got orders, httpRestClientType=$httpRestClientType" }
         }
     }
 }
