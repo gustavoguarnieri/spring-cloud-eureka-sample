@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: orderId
+          uri: lb://order-service
+          predicates:
+            - Path=/api/v1/orders
 
 eureka:
   client:
