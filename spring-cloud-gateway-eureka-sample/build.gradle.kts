@@ -1,7 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val springCloudStarterVersion = "3.1.4"
-val springDocVersion= "1.6.12"
 
 plugins {
 	id("org.springframework.boot") version "2.6.7"
@@ -30,7 +29,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.cloud:spring-cloud-starter-gateway")
 
-	implementation("org.springdoc:springdoc-openapi-ui:$springDocVersion")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

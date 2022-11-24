@@ -20,10 +20,6 @@ eureka:
     preferIpAddress: true
     instanceId: ${spring.application.name}:${random.value}
 
-springdoc:
-  packagesToScan: br.com.example.spring.cloud.gateway.eureka.sample.controller
-  pathsToMatch: /**
-
 logging:
   level:
     reactor:
